@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>ai</title>
+<style>
+.scrim{position:absolute;inset:0;background:rgba(40,40,60,.10)}
+.panel{position:absolute;right:16px;top:16px;bottom:16px;width:520px;display:flex;flex-direction:column;overflow:hidden;border-radius:12px;box-shadow:0 2px 6px rgba(15,15,30,.08),0 24px 60px -6px rgba(30,30,60,.3)}
+.ph{height:46px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid var(--line);font-weight:600;font-size:14px}
+.pb{flex:1;padding:18px 18px 8px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.u{align-self:flex-end;max-width:88%;background:var(--fg);color:var(--bg);border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:13.5px;line-height:1.5}
+.steps{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.st{display:flex;align-items:center;gap:10px;padding:8px 12px;font-size:12.5px;border-bottom:1px solid var(--line)}.st:last-child{border-bottom:0}
+.st .ok{color:var(--ok)} .st code{font-size:11.5px;background:var(--ai-soft);color:var(--ai);padding:1px 6px;border-radius:4px;font-weight:500}
+.st .r{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.a{background:var(--hover);border-radius:4px 14px 14px 14px;padding:11px 14px;font-size:13.5px;line-height:1.55;max-width:96%}
+.draft{border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:12.5px}
+.safe{display:flex;gap:9px;align-items:flex-start;background:rgba(68,131,97,.09);color:var(--ok);border-radius:9px;padding:9px 12px;font-size:12.5px;line-height:1.45}
+.safe b{font-weight:600}
+.pf{border-top:1px solid var(--line);padding:12px;display:flex;gap:8px;align-items:flex-end}
+.inp{flex:1;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13.5px;color:var(--faint)}
+.go{width:34px;height:34px;border-radius:9px;background:var(--fg);color:var(--bg);display:flex;align-items:center;justify-content:center;opacity:.3}
+</style></head><body>
+<div class="stage"><div class="win" style="width:1520px;height:920px">
+  <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url"><ic n="Lock" s="11" />mail.acme.com</div></div>
+  <div class="app"><!--include app.partial.html-->
+    <div class="scrim"></div>
+    <aside class="panel pop">
+      <header class="ph"><ic n="Sparkles" s="15" st="color:var(--ai)" /><span style="flex:1">Ask AI</span><span style="font-size:12px;font-weight:400;color:var(--faint)">Clear</span><span class="kbd">Esc</span></header>
+      <div class="pb">
+        <div class="u">Archive all newsletters from last week, label the invoices as Finance, and draft a reply to Maya accepting 30 days.</div>
+        <div class="steps">
+          <div class="st"><ic n="CircleCheck" s="15" c="ok" /><code>search_messages</code><span>category:newsletters after:7d</span><span class="r">23 found</span></div>
+          <div class="st"><ic n="CircleCheck" s="15" c="ok" /><code>archive</code><span>newsletters</span><span class="r">23 archived</span></div>
+          <div class="st"><ic n="CircleCheck" s="15" c="ok" /><code>search_messages</code><span>invoices &amp; receipts</span><span class="r">6 found</span></div>
+          <div class="st"><ic n="CircleCheck" s="15" c="ok" /><code>add_label</code><span>Finance</span><span class="r">6 labeled</span></div>
+          <div class="st"><ic n="CircleCheck" s="15" c="ok" /><code>create_reply_draft</code><span>Maya Chen</span><span class="r">1 draft</span></div>
+        </div>
+        <div class="a">All done. I archived <b>23 newsletters</b> (they stay searchable in Archive) and labeled <b>6 invoices</b> as Finance, including Stripe INV-0942. I also prepared a reply to Maya &mdash; it&rsquo;s waiting in Drafts.</div>
+        <div class="draft">
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px"><ic n="FileText" s="14" st="color:var(--muted)" /><b style="font-weight:600;font-size:13px">Re: Q3 contract renewal &mdash; redlines</b><span class="chip" style="margin-left:auto">Draft &middot; not sent</span></div>
+          <div style="color:var(--muted);line-height:1.55;border-left:2px solid var(--line);padding-left:11px">Hi Maya, 30 days on clause 4.2 works for us. Please send over the final PDF and I&rsquo;ll sign today. Thanks for the quick turnaround.<br>Alex</div>
+          <div style="display:flex;gap:8px;margin-top:11px"><span class="btn"><ic n="Pencil" s="13" />Open draft</span><span class="btn ghost">Discard</span></div>
+        </div>
+        <div class="safe"><ic n="ShieldCheck" s="16" st="margin-top:1px" /><div><b>Ask AI never sends mail on its own.</b> Drafts wait for your review &mdash; you press send. It also can&rsquo;t delete permanently.</div></div>
+      </div>
+      <div class="pf"><div class="inp">Ask anything about your mail&hellip;</div><div class="go"><ic n="ArrowUp" s="16" /></div></div>
+    </aside>
+  </div>
+</div></div></body></html>

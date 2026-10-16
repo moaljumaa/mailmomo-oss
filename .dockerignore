@@ -1,0 +1,8 @@
+.next
+node_modules
+data
+.e2e-data
+.test-data
+e2e-shots
+test-results
+.git

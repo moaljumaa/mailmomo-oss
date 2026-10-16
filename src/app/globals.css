@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+:root {
+  --bg: #ffffff;
+  --surface: #fbfbfa;
+  --raised: #ffffff;
+  --hover: rgba(55, 53, 47, 0.06);
+  --active: rgba(55, 53, 47, 0.1);
+  --line: rgba(55, 53, 47, 0.09);
+  --fg: #37352f;
+  --muted: #787774;
+  --faint: #a8a7a3;
+  --accent: #2f6fed;
+  --accent-soft: rgba(47, 111, 237, 0.1);
+  --danger: #d44c47;
+  --ok: #448361;
+  --ai: #8b5cf6;
+  --ai-soft: rgba(139, 92, 246, 0.09);
+  --shadow: 0 1px 2px rgba(15, 15, 15, 0.06), 0 8px 24px rgba(15, 15, 15, 0.1);
+  --selection: rgba(47, 111, 237, 0.08);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #191919;
+  --surface: #202020;
+  --raised: #252525;
+  --hover: rgba(255, 255, 255, 0.055);
+  --active: rgba(255, 255, 255, 0.1);
+  --line: rgba(255, 255, 255, 0.09);
+  --fg: #e8e8e6;
+  --muted: #9b9a97;
+  --faint: #6b6b68;
+  --accent: #5b92ff;
+  --accent-soft: rgba(91, 146, 255, 0.15);
+  --danger: #ff7369;
+  --ok: #5fb182;
+  --ai: #a78bfa;
+  --ai-soft: rgba(167, 139, 250, 0.13);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.5);
+  --selection: rgba(91, 146, 255, 0.12);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-hover: var(--hover);
+  --color-active: var(--active);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-ok: var(--ok);
+  --color-ai: var(--ai);
+  --color-ai-soft: var(--ai-soft);
+  --font-sans: "Inter Variable", ui-sans-serif, -apple-system, "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  --shadow-pop: var(--shadow);
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01";
+  overflow: hidden;
+}
+* { scrollbar-width: thin; scrollbar-color: var(--active) transparent; }
+::selection { background: var(--accent-soft); }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+input, textarea, select { outline: none; }
+
+.kbd {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; padding: 0 5px;
+  font-size: 11px; font-weight: 500; color: var(--muted); background: var(--hover); border-radius: 4px; border: 1px solid var(--line);
+}
+.pop { background: var(--raised); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+.row-hover:hover { background: var(--hover); }
+
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: none } }
+@keyframes pop-in { from { opacity: 0; transform: scale(.98) translateY(-4px) } to { opacity: 1; transform: none } }
+@keyframes shimmer { 0% { background-position: -200px 0 } 100% { background-position: 200px 0 } }
+.anim-fade { animation: fade-in .16s ease-out both; }
+.anim-pop { animation: pop-in .14s ease-out both; }
+.skeleton { background: linear-gradient(90deg, var(--hover) 0, var(--active) 50%, var(--hover) 100%); background-size: 400px 100%; animation: shimmer 1.4s infinite linear; border-radius: 6px; }
+@keyframes spin { to { transform: rotate(360deg) } }
+.spin { animation: spin 1s linear infinite; }
+
+/* composer editor */
+.editor .ProseMirror { outline: none; min-height: 160px; font-size: 14px; line-height: 1.6; }
+.editor .ProseMirror p { margin: 0 0 .6em; }
+.editor .ProseMirror p.is-editor-empty:first-child::before { content: attr(data-placeholder); color: var(--faint); float: left; height: 0; pointer-events: none; }
+.editor .ProseMirror blockquote { border-left: 2px solid var(--line); margin: .5em 0; padding-left: 12px; color: var(--muted); }
+.editor .ProseMirror a { color: var(--accent); text-decoration: underline; }
+.editor .ProseMirror ul { list-style: disc; padding-left: 1.4em; }
+.editor .ProseMirror ol { list-style: decimal; padding-left: 1.4em; }
+.mm-sig { color: var(--muted); }

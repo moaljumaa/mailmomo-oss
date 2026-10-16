@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>mcp</title>
+<style>
+.hd{height:52px;display:flex;align-items:center;padding:0 28px;border-bottom:1px solid var(--line);gap:8px;font-size:13.5px;color:var(--muted)}.hd b{color:var(--fg);font-weight:600}
+.cols{flex:1;display:flex;min-height:0}
+.left{width:760px;padding:30px 36px;border-right:1px solid var(--line)}
+.right{flex:1;padding:30px 36px;background:var(--surface)}
+h2{font-size:21px;font-weight:600;letter-spacing:-.015em}.lead{margin-top:6px;font-size:14px;color:var(--muted);line-height:1.55}
+.flow{margin-top:26px;display:flex;align-items:center;gap:0}
+.clients{display:flex;flex-direction:column;gap:10px;width:240px}
+.cl{display:flex;gap:11px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.cl .m{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;color:color-mix(in srgb,var(--c) 75%,var(--fg));background:color-mix(in srgb,var(--c) 14%,transparent)}
+.cl b{font-size:13.5px;font-weight:600;display:block}.cl span{font-size:12px;color:var(--muted)}
+.wire{flex:1;height:100%;min-width:60px;position:relative;display:flex;align-items:center;justify-content:center}
+.ep{flex:0 0 190px;border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));background:var(--accent-soft);border-radius:12px;padding:16px;text-align:center}
+.ep .uc{color:var(--accent)} .ep b{display:block;font-size:15px;margin:4px 0}.ep span{font-size:12px;color:var(--muted)}
+.term{margin-top:26px;background:#1d1d1f;color:#e6e6e3;border-radius:10px;padding:16px 18px;font-size:12.5px;line-height:1.7;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.term .p{color:#7c7c80}.term .a{color:#8ab4ff}.term .s{color:#9bd7a8}
+.term .bar{display:flex;gap:6px;margin-bottom:10px}.term .bar i{width:9px;height:9px;border-radius:50%;background:#3a3a3d}
+.sc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.scope{border:1px solid var(--line);border-radius:10px;padding:13px 14px;background:var(--bg)}
+.scope.on{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));box-shadow:0 0 0 3px var(--accent-soft)}
+.scope b{font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:7px}.scope p{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.45}
+.tools{margin-top:22px;border:1px solid var(--line);border-radius:10px;background:var(--bg);overflow:hidden}
+.tl{display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--line);font-size:12.5px}.tl:last-child{border:0}
+.tl code{font-size:12.5px;font-weight:500;min-width:190px}.tl span.d{color:var(--muted);flex:1}
+.sb{font-size:10.5px;font-weight:600;padding:1px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.04em}
+.sb.r{background:rgba(68,131,97,.12);color:var(--ok)}.sb.o{background:var(--accent-soft);color:var(--accent)}.sb.f{background:rgba(212,76,71,.1);color:var(--danger)}
+.pts{display:flex;gap:18px;margin-top:18px;font-size:12.5px;color:var(--muted)}.pts div{display:flex;gap:7px;align-items:center}
+</style></head><body>
+<div class="stage"><div class="win" style="width:1520px;height:920px">
+  <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url"><ic n="Lock" s="11" />mail.acme.com/settings/api</div></div>
+  <div class="hd"><ic n="Settings" s="15" />Settings <span>/</span> <b>API &amp; MCP</b></div>
+  <div class="cols">
+    <div class="left">
+      <h2>Let your AI assistant use your inbox.</h2>
+      <p class="lead">Mailmomo ships an MCP server. Point Claude, Cursor or any MCP client at it with a scoped token &mdash; the same tool registry powers the in-app Ask AI.</p>
+      <div class="flow">
+        <div class="clients">
+          <div class="cl" style="--c:#d9730d"><span class="m">C</span><div><b>Claude</b><span>Claude Code &amp; Desktop</span></div></div>
+          <div class="cl" style="--c:#2f6fed"><span class="m">&gt;_</span><div><b>Cursor</b><span>and other editors</span></div></div>
+          <div class="cl" style="--c:#448361"><span class="m"><ic n="Bot" s="16" /></span><div><b>Any MCP client</b><span>ChatGPT-style, custom agents</span></div></div>
+        </div>
+        <div class="wire"><svg width="100%" height="150" viewBox="0 0 100 150" preserveAspectRatio="none"><g fill="none" stroke="var(--faint)" stroke-width="1.4" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"><path d="M0 22 C50 22 50 75 100 75" vector-effect="non-scaling-stroke"/><path d="M0 75 L100 75" vector-effect="non-scaling-stroke"/><path d="M0 128 C50 128 50 75 100 75" vector-effect="non-scaling-stroke"/></g></svg><span class="chip" style="position:absolute;top:50%;margin-top:-34px;background:var(--bg);border:1px solid var(--line)"><ic n="KeyRound" s="10" />Bearer mm_&hellip;</span></div>
+        <div class="ep"><div class="uc">Your server</div><b>/api/mcp</b><span>Streamable HTTP<br>scoped, audit-logged</span></div>
+      </div>
+      <div class="term">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div><span class="p">$</span> <span class="a">claude mcp add</span> --transport http mailmomo \</div>
+        <div>&nbsp;&nbsp;<span class="s">https://mail.acme.com/api/mcp</span> \</div>
+        <div>&nbsp;&nbsp;--header <span class="s">"Authorization: Bearer mm_xxx"</span></div>
+        <div style="margin-top:6px"><span class="p">&gt;</span> <span style="color:#c9c9c6">summarize my unread mail and draft replies to anything urgent</span></div>
+      </div>
+      <div class="pop" style="box-shadow:none;margin-top:18px;padding:14px 16px;font-size:13px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px"><span class="m" style="width:22px;height:22px;border-radius:6px;background:rgba(217,115,13,.14);color:#b45f0a;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:11px">C</span><b style="font-weight:600">Claude</b><span style="color:var(--faint);font-size:12px">via mailmomo MCP</span></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px"><span class="chip ai">search_messages &middot; 14 unread</span><span class="chip ai">summarize_thread &times; 3</span><span class="chip ai">create_reply_draft &times; 2</span></div>
+        <div style="color:var(--muted);line-height:1.55">3 threads look urgent. I drafted replies to Maya and Dan &mdash; they&rsquo;re in your Drafts. I can&rsquo;t send them: this token has no <i>send</i> scope.</div>
+      </div>
+      <div class="pts">
+        <div><ic n="Hash" s="14" />Tokens stored hashed, shown once</div>
+        <div><ic n="Ban" s="14" />Revocable any time</div>
+        <div><ic n="ScrollText" s="14" />Every mutation audit-logged</div>
+      </div>
+    </div>
+    <div class="right">
+      <div style="display:flex;align-items:center"><h2 style="font-size:16px">Create a token</h2><span class="btn pri" style="margin-left:auto"><ic n="Plus" s="14" />New token</span></div>
+      <div class="sc">
+        <div class="scope"><b><ic n="Eye" s="15" st="color:var(--ok)" />Read</b><p>Search and read mail, summaries, stats.</p></div>
+        <div class="scope on"><b><ic n="FolderCog" s="15" st="color:var(--accent)" />Organize</b><p>Read, plus label, archive, snooze, drafts and rules.</p></div>
+        <div class="scope"><b><ic n="Send" s="15" st="color:var(--danger)" />Full</b><p>Everything, plus send, reply and forward.</p></div>
+      </div>
+      <div class="tools">
+        <div class="tl" style="background:var(--hover);font-size:11px"><span class="uc">Tools visible to an organize token</span><span style="margin-left:auto;color:var(--faint)">~45 in total</span></div>
+        <div class="tl"><code>search_messages</code><span class="d">Full-text + operators</span><span class="sb r">read</span></div>
+        <div class="tl"><code>get_thread</code><span class="d">Read a whole conversation</span><span class="sb r">read</span></div>
+        <div class="tl"><code>summarize_thread</code><span class="d">AI summary of a thread</span><span class="sb r">read</span></div>
+        <div class="tl"><code>natural_language_search</code><span class="d">&ldquo;invoices from Stripe last month&rdquo;</span><span class="sb r">read</span></div>
+        <div class="tl"><code>archive</code><span class="d">Archive conversations</span><span class="sb o">organize</span></div>
+        <div class="tl"><code>add_label</code><span class="d">Label conversations</span><span class="sb o">organize</span></div>
+        <div class="tl"><code>snooze</code><span class="d">Hide until later</span><span class="sb o">organize</span></div>
+        <div class="tl"><code>create_reply_draft</code><span class="d">Draft only, never sent</span><span class="sb o">organize</span></div>
+        <div class="tl"><code>create_rule_from_text</code><span class="d">Rules in plain English</span><span class="sb o">organize</span></div>
+        <div class="tl" style="opacity:.55"><code>send_email</code><span class="d">Not listed for this token</span><span class="sb f">full</span></div>
+        <div class="tl" style="opacity:.55"><code>reply</code><span class="d">Not listed for this token</span><span class="sb f">full</span></div>
+      </div>
+      <div style="margin-top:22px" class="uc">Your tokens</div>
+      <div class="tools" style="margin-top:8px">
+        <div class="tl" style="padding:11px 14px"><div style="flex:1"><div style="font-weight:600;font-size:13.5px">Claude Code &middot; laptop</div><div style="color:var(--muted);font-size:12px">mm_k3x9&hellip; &middot; organize &middot; used 2 minutes ago</div></div><span style="color:var(--danger);font-size:12.5px">Revoke</span></div>
+        <div class="tl" style="padding:11px 14px"><div style="flex:1"><div style="font-weight:600;font-size:13.5px">Cursor</div><div style="color:var(--muted);font-size:12px">mm_q7d2&hellip; &middot; read only &middot; used yesterday</div></div><span style="color:var(--danger);font-size:12.5px">Revoke</span></div>
+      </div>
+      <div style="margin-top:14px;font-size:12.5px;color:var(--muted);display:flex;gap:8px;align-items:center"><ic n="ShieldCheck" s="15" st="color:var(--ok)" />Tools a token isn&rsquo;t allowed to use are not even listed. Email bodies are treated as untrusted data.</div>
+    </div>
+  </div>
+</div></div></body></html>

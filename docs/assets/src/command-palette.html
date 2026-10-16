@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>palette</title>
+<style>
+.blur{position:absolute;inset:0;filter:blur(6px) saturate(.9);transform:scale(1.01);display:flex}
+.scrim{position:absolute;inset:0;background:rgba(35,35,55,.22)}
+.over{position:absolute;inset:0;display:flex;gap:28px;justify-content:center;padding-top:62px}
+.pal{width:640px;height:700px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 2px 6px rgba(15,15,30,.1),0 28px 70px -6px rgba(30,30,60,.35)}
+.pi{height:52px;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid var(--line);font-size:14.5px}
+.pl{padding:6px;flex:1;overflow:hidden}
+.g{padding:10px 10px 4px;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--faint)}
+.it{height:36px;display:flex;align-items:center;gap:11px;padding:0 10px;border-radius:6px;font-size:13.5px}.it .ic{color:var(--muted)}.it .k{margin-left:auto;display:flex;gap:4px;align-items:center;font-size:11.5px;color:var(--faint)}
+.it.sel{background:var(--hover)}
+.cheat{width:600px;height:700px;padding:22px 26px;overflow:hidden;box-shadow:0 2px 6px rgba(15,15,30,.1),0 28px 70px -6px rgba(30,30,60,.35)}
+.cheat h3{font-size:15px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+.cg .t{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--faint);margin-bottom:6px}
+.cr{display:flex;align-items:center;justify-content:space-between;padding:6px 0;font-size:13.5px}.cr span:first-child{color:var(--muted)}.cr .kk{display:flex;gap:4px;align-items:center;color:var(--faint)}
+.tip{margin-top:22px;border-top:1px solid var(--line);padding-top:14px;font-size:12.5px;color:var(--muted);display:flex;gap:8px;align-items:center}
+</style></head><body>
+<div class="stage"><div class="win" style="width:1520px;height:920px">
+  <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url"><ic n="Lock" s="11" />mail.acme.com</div></div>
+  <div class="app">
+    <div class="blur"><!--include app.partial.html--></div>
+    <div class="scrim"></div>
+    <div class="over">
+      <div class="pal pop">
+        <div class="pi"><ic n="Search" s="16" st="color:var(--faint)" /><span style="flex:1;color:var(--faint)">Type a command, search mail, or ask AI&hellip;</span><span class="kbd">esc</span></div>
+        <div class="pl">
+          <div class="g">This conversation</div>
+          <div class="it sel"><ic n="Archive" s="15" />Archive<span class="k"><span class="kbd">e</span></span></div>
+          <div class="it"><ic n="Clock" s="15" />Snooze&hellip;<span class="k"><span class="kbd">h</span></span></div>
+          <div class="it"><ic n="Tag" s="15" />Add label&hellip;<span class="k"><span class="kbd">l</span></span></div>
+          <div class="it"><ic n="Star" s="15" />Star<span class="k"><span class="kbd">s</span></span></div>
+          <div class="it"><ic n="Reply" s="15" />Reply<span class="k"><span class="kbd">r</span></span></div>
+          <div class="it"><ic n="Forward" s="15" />Forward<span class="k"><span class="kbd">f</span></span></div>
+          <div class="g">Actions</div>
+          <div class="it"><ic n="Plus" s="15" />New message<span class="k"><span class="kbd">c</span></span></div>
+          <div class="it"><ic n="Sparkles" s="15" st="color:var(--ai)" />Ask AI assistant<span class="k"><span class="kbd">&#8984;J</span></span></div>
+          <div class="it"><ic n="Wand2" s="15" />Clean up inbox&hellip;</div>
+          <div class="it"><ic n="RefreshCw" s="15" />Sync now</div>
+          <div class="g">Go to</div>
+          <div class="it"><ic n="Inbox" s="15" />Inbox<span class="k">g i</span></div>
+          <div class="it"><ic n="Reply" s="15" />Needs reply</div>
+          <div class="it"><ic n="Star" s="15" />Starred<span class="k">g k</span></div>
+          <div class="it"><ic n="Send" s="15" />Sent<span class="k">g s</span></div>
+          <div class="it"><span class="dot" style="background:#448361;margin:0 3px"></span>Label: Finance</div>
+        </div>
+      </div>
+      <div class="cheat pop">
+        <h3><ic n="Keyboard" s="16" st="color:var(--muted)" />Keyboard shortcuts <span style="margin-left:auto" class="kbd">?</span></h3>
+        <div class="cg">
+          <div><div class="t">Navigate</div>
+            <div class="cr"><span>Next / previous</span><span class="kk"><span class="kbd">j</span>/<span class="kbd">k</span></span></div>
+            <div class="cr"><span>Open conversation</span><span class="kbd">Enter</span></div>
+            <div class="cr"><span>Go to Inbox</span><span class="kk"><span class="kbd">g</span><span class="kbd">i</span></span></div>
+            <div class="cr"><span>Go to Sent</span><span class="kk"><span class="kbd">g</span><span class="kbd">s</span></span></div>
+            <div class="cr"><span>Go to Drafts</span><span class="kk"><span class="kbd">g</span><span class="kbd">d</span></span></div>
+            <div class="cr"><span>Go to Archive</span><span class="kk"><span class="kbd">g</span><span class="kbd">a</span></span></div>
+            <div class="cr"><span>Search</span><span class="kbd">/</span></div>
+            <div class="cr"><span>Command palette</span><span class="kk"><span class="kbd">&#8984;</span><span class="kbd">K</span></span></div>
+            <div class="cr"><span>Ask AI</span><span class="kk"><span class="kbd">&#8984;</span><span class="kbd">J</span></span></div>
+          </div>
+          <div><div class="t">Act</div>
+            <div class="cr"><span>Archive (done)</span><span class="kbd">e</span></div>
+            <div class="cr"><span>Trash</span><span class="kbd">#</span></div>
+            <div class="cr"><span>Report spam</span><span class="kbd">!</span></div>
+            <div class="cr"><span>Star</span><span class="kbd">s</span></div>
+            <div class="cr"><span>Toggle unread</span><span class="kbd">u</span></div>
+            <div class="cr"><span>Snooze</span><span class="kbd">h</span></div>
+            <div class="cr"><span>Label</span><span class="kbd">l</span></div>
+            <div class="cr"><span>Move to&hellip;</span><span class="kbd">v</span></div>
+            <div class="cr"><span>Undo</span><span class="kbd">z</span></div>
+            <div class="cr"><span>Select conversation</span><span class="kbd">x</span></div>
+          </div>
+          <div><div class="t">Write</div>
+            <div class="cr"><span>Compose</span><span class="kbd">c</span></div>
+            <div class="cr"><span>Reply</span><span class="kbd">r</span></div>
+            <div class="cr"><span>Reply all</span><span class="kbd">a</span></div>
+            <div class="cr"><span>Forward</span><span class="kbd">f</span></div>
+            <div class="cr"><span>Send</span><span class="kk"><span class="kbd">&#8984;</span><span class="kbd">Enter</span></span></div>
+            <div class="cr"><span>Close / save draft</span><span class="kbd">Esc</span></div>
+          </div>
+          <div><div class="t">View</div>
+            <div class="cr"><span>Toggle sidebar</span><span class="kbd">[</span></div>
+            <div class="cr"><span>This help</span><span class="kbd">?</span></div>
+          </div>
+        </div>
+        <div class="tip"><ic n="Zap" s="15" st="color:var(--accent)" />Every action applies instantly and syncs to your IMAP server in the background.</div>
+      </div>
+    </div>
+  </div>
+</div></div></body></html>

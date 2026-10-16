@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>social</title>
+<style>
+body{background:linear-gradient(135deg,#f6f7fb,#eceffa 60%,#efe8f7)}
+.l{position:absolute;left:64px;top:0;bottom:0;width:600px;display:flex;flex-direction:column;justify-content:center;z-index:2}
+.logo{display:flex;align-items:center;gap:14px}
+.mk{width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,#4d86f5,#2f6fed 55%,#7a5af0);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 20px -6px rgba(47,111,237,.55)}
+.wm{font-size:38px;font-weight:650;letter-spacing:-.03em}
+.l h1{margin-top:34px;font-size:44px;line-height:1.1;letter-spacing:-.03em;font-weight:650}
+.l h1 em{font-style:normal;color:var(--ai)}
+.sub{margin-top:20px;font-size:17px;color:var(--muted);line-height:1.5}
+.tags{margin-top:28px;display:flex;gap:8px;flex-wrap:wrap}
+.tags .chip{height:28px;padding:0 12px;font-size:13px;background:var(--bg);border:1px solid var(--line);color:var(--fg);border-radius:8px}
+.crop{position:absolute;left:700px;top:96px;width:1520px;height:920px;transform:scale(.62);transform-origin:0 0}
+.fade{position:absolute;left:0;top:0;bottom:0;width:70px;background:linear-gradient(90deg,#eef0fa,transparent);left:600px;z-index:1}
+</style></head><body>
+<div class="l">
+  <div class="logo"><div class="mk"><ic n="Mail" s="28" w="2" /></div><div class="wm">Mailmomo</div></div>
+  <h1>The calm, <em>AI-native</em> email client you <span style="white-space:nowrap">self&#8209;host.</span></h1>
+  <div class="tags"><span class="chip">Keyboard-first</span><span class="chip">Any IMAP/SMTP</span><span class="chip">MCP server</span><span class="chip">Open source</span></div>
+</div>
+<div class="crop"><div class="win" style="width:1520px;height:920px"><div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url"><ic n="Lock" s="11" />mail.acme.com</div></div><div class="app"><!--include app.partial.html--></div></div></div>
+</body></html>

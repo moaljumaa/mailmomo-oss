@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>accounts</title>
+<style>
+.hd{height:52px;display:flex;align-items:center;padding:0 28px;border-bottom:1px solid var(--line);gap:8px;font-size:13.5px;color:var(--muted)}
+.hd b{color:var(--fg);font-weight:600}
+.cols{flex:1;display:flex;min-height:0}
+.left{flex:1;padding:30px 36px;border-right:1px solid var(--line);background:var(--bg)}
+.right{width:560px;padding:30px 32px;background:var(--surface)}
+h2{font-size:21px;font-weight:600;letter-spacing:-.015em}
+.lead{margin-top:6px;font-size:14px;color:var(--muted);line-height:1.55;max-width:700px}
+.grid{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pc{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:15px 16px;background:var(--bg)}
+.pc .m{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:color-mix(in srgb,var(--c) 75%,var(--fg));background:color-mix(in srgb,var(--c) 14%,transparent);flex-shrink:0}
+.pc .t{font-size:13.5px;font-weight:600}.pc .s{font-size:12px;color:var(--muted);margin-top:1px}.pc .s code{font-size:11.5px}
+.pc.any{border-style:dashed;background:transparent}
+.note{margin-top:16px;display:flex;gap:9px;font-size:12.5px;color:var(--muted);align-items:center}
+.ac{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px 16px;margin-bottom:12px;display:flex;gap:12px;align-items:center}
+.ac .sq{width:32px;height:32px;border-radius:8px;color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:13px}
+.bar{height:4px;border-radius:2px;background:var(--active);margin-top:7px;width:210px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent)}
+.form{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:18px}
+.fg{display:grid;grid-template-columns:1fr 90px;gap:10px;margin-top:10px}
+.f label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:4px}.f div{height:30px;border:1px solid var(--line);border-radius:6px;padding:0 9px;display:flex;align-items:center;font-size:13px}
+.ok{color:var(--ok)}
+</style></head><body>
+<div class="stage"><div class="win" style="width:1520px;height:920px">
+  <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url"><ic n="Lock" s="11" />mail.acme.com/settings/accounts</div></div>
+  <div class="hd"><ic n="Settings" s="15" />Settings <span>/</span> <b>Accounts</b><span style="margin-left:auto" class="btn pri"><ic n="Plus" s="14" />Add account</span></div>
+  <div class="cols">
+    <div class="left">
+      <h2>Bring any mailbox. It&rsquo;s just IMAP + SMTP.</h2>
+      <p class="lead">Mailmomo connects with plain IMAP and SMTP &mdash; no OAuth, no provider lock-in, no presets. Enter server, port and credentials for whatever you use. Typical setups:</p>
+      <div class="grid">
+        <div class="pc" style="--c:#d44c47"><span class="m">G</span><div><div class="t">Gmail</div><div class="s"><code>imap.gmail.com</code> &middot; app password</div></div></div>
+        <div class="pc" style="--c:#2f6fed"><span class="m">O</span><div><div class="t">Outlook / Microsoft 365</div><div class="s"><code>outlook.office365.com</code> &middot; IMAP + SMTP AUTH on</div></div></div>
+        <div class="pc" style="--c:#5b6b7b"><span class="m">i</span><div><div class="t">iCloud Mail</div><div class="s"><code>imap.mail.me.com</code> &middot; app-specific password</div></div></div>
+        <div class="pc" style="--c:#2f6fed"><span class="m">F</span><div><div class="t">Fastmail</div><div class="s"><code>imap.fastmail.com</code> &middot; app password</div></div></div>
+        <div class="pc" style="--c:#8b5cf6"><span class="m">P</span><div><div class="t">Proton Mail (via Bridge)</div><div class="s"><code>127.0.0.1:1143</code> &middot; Bridge password</div></div></div>
+        <div class="pc" style="--c:#d9730d"><span class="m">Z</span><div><div class="t">Zoho Mail</div><div class="s"><code>imap.zoho.com</code> &middot; app password</div></div></div>
+        <div class="pc" style="--c:#8b5cf6"><span class="m">Y</span><div><div class="t">Yahoo Mail</div><div class="s"><code>imap.mail.yahoo.com</code> &middot; app password</div></div></div>
+        <div class="pc" style="--c:#d9730d"><span class="m">S</span><div><div class="t">AWS SES (SMTP)</div><div class="s">Sending via <code>email-smtp.&lt;region&gt;.amazonaws.com</code></div></div></div>
+        <div class="pc" style="--c:#448361"><span class="m">M</span><div><div class="t">Mailcow / Dovecot / self-hosted</div><div class="s"><code>mail.yourdomain.com</code> &middot; mailbox password</div></div></div>
+        <div class="pc any"><span class="m" style="--c:#787774"><ic n="Server" s="17" /></span><div><div class="t">Any IMAP server</div><div class="s">If it speaks IMAP and SMTP, it works</div></div></div>
+      </div>
+      <div class="note"><ic n="ShieldCheck" s="15" st="color:var(--ok)" />Passwords are encrypted at rest (AES-256-GCM) and never sent to the browser. Hostnames above are examples &mdash; check your provider&rsquo;s docs.</div>
+      <div style="margin-top:26px;display:flex;align-items:center;gap:14px">
+        <div class="pop" style="box-shadow:none;padding:12px 16px;flex:1"><div class="uc">Your server</div><div style="font-size:13.5px;font-weight:600;margin-top:2px">IMAP mailbox</div><div style="font-size:12px;color:var(--muted)">read, sync, IDLE push</div></div>
+        <ic n="ArrowLeftRight" s="18" st="color:var(--faint)" />
+        <div class="pop" style="box-shadow:none;padding:12px 16px;flex:1;border-color:color-mix(in srgb,var(--accent) 40%,var(--line))"><div class="uc" style="color:var(--accent)">Mailmomo</div><div style="font-size:13.5px;font-weight:600;margin-top:2px">SQLite cache + queue</div><div style="font-size:12px;color:var(--muted)">instant UI, offline-tolerant</div></div>
+        <ic n="ArrowRight" s="18" st="color:var(--faint)" />
+        <div class="pop" style="box-shadow:none;padding:12px 16px;flex:1"><div class="uc">Your server</div><div style="font-size:13.5px;font-weight:600;margin-top:2px">SMTP relay</div><div style="font-size:12px;color:var(--muted)">sending (e.g. AWS SES)</div></div>
+      </div>
+    </div>
+    <div class="right">
+      <div style="display:flex;align-items:baseline;margin-bottom:14px"><h2 style="font-size:16px">Connected accounts</h2><span style="margin-left:auto;font-size:12.5px;color:var(--muted)">One unified inbox</span></div>
+      <div class="ac"><span class="sq" style="background:#2f6fed">A</span><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13.5px">Acme</div><div style="font-size:12px;color:var(--muted)">alex@acme.com &middot; self-hosted Dovecot</div></div><span class="chip ok"><ic n="Zap" s="11" />Live &middot; IDLE</span></div>
+      <div class="ac"><span class="sq" style="background:#448361">P</span><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13.5px">Personal</div><div style="font-size:12px;color:var(--muted)">alex@fastmail.example &middot; Fastmail</div></div><span class="chip ok"><ic n="Zap" s="11" />Live &middot; IDLE</span></div>
+      <div class="ac"><span class="sq" style="background:#d9730d">S</span><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13.5px">Studio</div><div style="font-size:12px;color:var(--muted)">hello@studio.example &middot; Zoho + SES sending</div></div><span class="chip ok"><ic n="Zap" s="11" />Live &middot; IDLE</span></div>
+      <div class="ac"><span class="sq" style="background:#8b5cf6">N</span><div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13.5px">Newsletters</div><div style="font-size:12px;color:var(--muted)">reading@gmail.example &middot; Gmail</div><div class="bar"><i style="width:62%"></i></div></div><span class="chip"><ic n="RefreshCw" s="11" />Backfilling 62%</span></div>
+      <div class="form">
+        <div style="font-weight:600;font-size:13.5px">New account &middot; IMAP</div>
+        <div class="fg"><div class="f"><label>Server</label><div>imap.yourdomain.com</div></div><div class="f"><label>Port</label><div>993</div></div></div>
+        <div class="fg"><div class="f"><label>Username</label><div>you@yourdomain.com</div></div><div class="f"><label>Security</label><div>SSL</div></div></div>
+        <div style="font-weight:600;font-size:13.5px;margin-top:16px">SMTP</div>
+        <div class="fg"><div class="f"><label>Server</label><div>smtp.yourdomain.com</div></div><div class="f"><label>Port</label><div>587</div></div></div>
+        <div style="display:flex;align-items:center;gap:14px;margin-top:16px"><span class="btn"><ic n="Plug" s="13" />Test connection</span><span class="ok" style="font-size:12.5px;display:flex;align-items:center;gap:5px"><ic n="CircleCheck" s="14" />IMAP</span><span class="ok" style="font-size:12.5px;display:flex;align-items:center;gap:5px"><ic n="CircleCheck" s="14" />SMTP</span><span class="btn pri" style="margin-left:auto">Save account</span></div>
+      </div>
+    </div>
+  </div>
+</div></div></body></html>
