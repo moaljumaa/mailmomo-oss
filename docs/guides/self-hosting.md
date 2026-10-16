@@ -6,7 +6,7 @@ git clone <this repo> && cd mailmomo
 cp .env.example .env            # set BETTER_AUTH_URL=https://mail.example.com (+ optionally LLM_API_KEY)
 docker compose up -d            # app on :3000 (+ Redis for multi-process live updates, optional)
 ```
-Or pull the prebuilt image published on every release: `ghcr.io/<owner>/<repo>:latest`.
+Or pull the prebuilt image published on every release: `moaljumaa/mailmomo:latest` (Docker Hub, linux/amd64; also tagged per version).
 
 Put it behind HTTPS (Caddy / nginx / Traefik); disable proxy buffering and allow long reads for `/api/events` (SSE).
 

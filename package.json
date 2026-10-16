@@ -1,6 +1,6 @@
 {
   "name": "mailmomo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Calm, keyboard-first, AI-native email client you self-host. Any IMAP/SMTP account, built-in MCP server.",
   "license": "AGPL-3.0-only",
   "author": "Mohammad Al Jumaa",
